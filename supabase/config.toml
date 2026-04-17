@@ -1,1 +1,4 @@
 project_id = "ckjthnkonomqzbazaeyq"
+
+[functions.notify-admin-appointment]
+verify_jwt = false
