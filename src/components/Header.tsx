@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Eye } from "lucide-react";
+import { Menu, X, Instagram, Youtube } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const NAV = [
   { id: "hero", label: "Home" },
@@ -46,8 +47,8 @@ export const Header = ({ onBookClick }: HeaderProps) => {
     <header className="fixed inset-x-0 top-0 z-50 bg-navy/95 backdrop-blur-lg shadow-lg">
       <div className="flex items-center justify-between px-4 sm:px-8 h-[62px] border-b border-white/10">
         <button onClick={() => go("hero")} className="flex items-center gap-3">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-sky to-accent flex items-center justify-center border-2 border-accent/60">
-            <Eye className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-white border-2 border-accent/60 shadow-glow">
+            <img src={logo} alt="Dr J Sumanth Reddy logo" className="w-full h-full object-cover" />
           </div>
           <div className="text-left">
             <strong className="block font-display text-sm sm:text-base text-white leading-tight">
@@ -57,12 +58,32 @@ export const Header = ({ onBookClick }: HeaderProps) => {
           </div>
         </button>
 
-        <button
-          onClick={onBookClick}
-          className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-sky to-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition shadow-glow"
-        >
-          Book Appointment
-        </button>
+        <div className="hidden sm:flex items-center gap-3">
+          <a
+            href="https://www.instagram.com/drjsumanthreddy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
+          >
+            <Instagram className="h-4 w-4" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCivshx63o9MdQiIA9ORzWhQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
+          >
+            <Youtube className="h-4 w-4" />
+          </a>
+          <button
+            onClick={onBookClick}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-sky to-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition shadow-glow"
+          >
+            Book Appointment
+          </button>
+        </div>
 
         <button
           onClick={() => setMobileOpen((s) => !s)}
