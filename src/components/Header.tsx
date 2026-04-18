@@ -66,7 +66,7 @@ export const Header = ({ onBookClick }: HeaderProps) => {
 
         <button
           onClick={() => setMobileOpen((s) => !s)}
-          className="lg:hidden p-2 text-white"
+          className="md:hidden p-2 text-white"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -74,7 +74,7 @@ export const Header = ({ onBookClick }: HeaderProps) => {
       </div>
 
       {/* Desktop nav */}
-      <nav className="hidden lg:flex items-center justify-center gap-1 h-11 bg-white/5 px-8">
+      <nav className="hidden md:flex items-center justify-center gap-1 h-11 bg-white/5 px-8">
         {NAV.map((n) => (
           <button
             key={n.id}
