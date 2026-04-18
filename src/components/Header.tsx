@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Instagram, Youtube } from "lucide-react";
+import { Menu, X, Instagram, Youtube, Facebook, Twitter } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 
 const NAV = [
@@ -47,10 +47,10 @@ export const Header = ({ onBookClick }: HeaderProps) => {
     <header className="fixed inset-x-0 top-0 z-50 bg-navy/95 backdrop-blur-lg shadow-lg">
       <div className="flex items-center justify-between px-4 sm:px-8 h-[62px] border-b border-white/10">
         <button onClick={() => go("hero")} className="flex items-center gap-3">
-          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-white border-2 border-accent/60 shadow-glow">
+          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-white border-2 border-accent/60 shadow-glow shrink-0">
             <img src={logo} alt="Dr J Sumanth Reddy logo" className="w-full h-full object-cover" />
           </div>
-          <div className="text-left">
+          <div className="flex flex-col justify-center text-left">
             <strong className="block font-display text-sm sm:text-base text-white leading-tight">
               Dr J Sumanth Reddy
             </strong>
@@ -58,7 +58,7 @@ export const Header = ({ onBookClick }: HeaderProps) => {
           </div>
         </button>
 
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-2 md:gap-3">
           <a
             href="https://www.instagram.com/drjsumanthreddy/"
             target="_blank"
@@ -76,6 +76,24 @@ export const Header = ({ onBookClick }: HeaderProps) => {
             className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
           >
             <Youtube className="h-4 w-4" />
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
+          >
+            <Facebook className="h-4 w-4" />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
+          >
+            <Twitter className="h-4 w-4" />
           </a>
           <button
             onClick={onBookClick}
