@@ -92,7 +92,7 @@ export const Header = ({ onBookClick }: HeaderProps) => {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <nav className="lg:hidden flex flex-col gap-1 px-4 py-3 bg-navy-deep border-t border-white/10">
+        <nav className="md:hidden flex flex-col gap-1 px-4 py-3 bg-navy-deep border-t border-white/10">
           {NAV.map((n) => (
             <button
               key={n.id}
