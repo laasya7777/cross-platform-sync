@@ -7,7 +7,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Banner } from "@/components/Banner";
 import { AppointmentDialog } from "@/components/AppointmentDialog";
-import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses } from "lucide-react";
+import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses, Instagram, Facebook, Youtube, MessageCircle } from "lucide-react";
 
 const STRIP = [
   { Icon: Eye, label: "Cataract Surgery" },
