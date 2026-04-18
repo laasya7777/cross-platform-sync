@@ -7,6 +7,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Banner } from "@/components/Banner";
 import { AppointmentDialog } from "@/components/AppointmentDialog";
+import { Gallery } from "@/components/Gallery";
 import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses, Instagram, Facebook, Youtube, MessageCircle } from "lucide-react";
 
 const STRIP = [
@@ -40,28 +41,7 @@ const Index = () => {
       <About />
       <Services />
 
-      {/* Gallery placeholder section id for nav */}
-      <section id="gallery" className="py-20 px-5 sm:px-10 bg-background">
-        <div className="max-w-6xl mx-auto text-center">
-          <span className="inline-block bg-pale text-sky text-[11px] tracking-[2px] uppercase px-4 py-1.5 rounded-full mb-3">
-            Gallery
-          </span>
-          <h2 className="font-display text-[clamp(28px,4vw,42px)] text-navy mb-3">Eye Care in Action</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-10">
-            A glimpse into our state-of-the-art clinic and the precision of modern eye care.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div
-                key={i}
-                className="aspect-[4/3] gradient-card rounded-2xl shadow-soft flex items-center justify-center text-6xl"
-              >
-                👁
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Gallery />
 
       <Testimonials />
       <Contact />
