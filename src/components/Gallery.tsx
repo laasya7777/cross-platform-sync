@@ -6,8 +6,6 @@ import g5 from "@/assets/gallery-5.jpeg";
 import g6 from "@/assets/gallery-6.jpeg";
 import g7 from "@/assets/gallery-7.jpeg";
 import g8 from "@/assets/gallery-8.jpeg";
-import g9 from "@/assets/gallery-9.jpeg";
-import g10 from "@/assets/gallery-10.jpeg";
 
 const PHOTOS = [
   { src: g1, alt: "Dr Sumanth Reddy examining a patient at the slit lamp", caption: "Slit-lamp examination" },
@@ -15,10 +13,8 @@ const PHOTOS = [
   { src: g6, alt: "Dr Sumanth Reddy in the consultation room", caption: "Consultation room" },
   { src: g4, alt: "Doctor consulting a patient with diagnostic equipment", caption: "Patient consultation" },
   { src: g5, alt: "Dr Sumanth Reddy with the WaveLight LASIK laser system", caption: "LASIK suite" },
-  { src: g10, alt: "Advanced LASIK laser system in the surgical theatre", caption: "Refractive laser theatre" },
   { src: g8, alt: "Doctor beside the femtosecond laser platform", caption: "Femtosecond platform" },
   { src: g3, alt: "Dr Sumanth Reddy in the surgical preparation area", caption: "Surgical prep" },
-  { src: g9, alt: "Modern eye examination room with diagnostic equipment", caption: "Diagnostic suite" },
   { src: g7, alt: "Dr Sumanth Reddy with international patients post-treatment", caption: "International patients" },
 ];
 
