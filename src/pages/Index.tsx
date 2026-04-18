@@ -7,7 +7,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Banner } from "@/components/Banner";
 import { AppointmentDialog } from "@/components/AppointmentDialog";
-import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses } from "lucide-react";
+import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses, Instagram, Facebook, Youtube, MessageCircle } from "lucide-react";
 
 const STRIP = [
   { Icon: Eye, label: "Cataract Surgery" },
@@ -67,12 +67,35 @@ const Index = () => {
       <Contact />
       <Banner onBookClick={() => setOpen(true)} />
 
-      <footer className="bg-navy-deep px-5 sm:px-10 py-8 text-center text-white/40 text-sm">
-        <p>
-          © 2024 <strong className="text-white/70">Dr J Sumanth Reddy</strong> – Eye Specialist
-          &amp; Surgeon. All rights reserved.
-        </p>
-        <p className="mt-2">Hyderabad, Telangana | Designed with ❤ for better vision</p>
+      <footer className="bg-navy-deep px-5 sm:px-10 py-10 text-center text-white/50 text-sm">
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-5">
+          <div className="flex items-center gap-3">
+            {[
+              { Icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+              { Icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+              { Icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+              { Icon: MessageCircle, href: "https://wa.me/919000000000", label: "WhatsApp" },
+            ].map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+          <div className="space-y-1">
+            <p>
+              © 2024 <strong className="text-white/80">Dr J Sumanth Reddy</strong> – Eye Specialist
+              &amp; Surgeon. All rights reserved.
+            </p>
+            <p className="text-white/40">Hyderabad, Telangana | Designed with ❤ for better vision</p>
+          </div>
+        </div>
       </footer>
 
       <AppointmentDialog open={open} onOpenChange={setOpen} />
