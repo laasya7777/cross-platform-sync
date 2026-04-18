@@ -54,7 +54,7 @@ export const Header = ({ onBookClick }: HeaderProps) => {
             <strong className="block font-display text-sm sm:text-base text-white leading-tight">
               Dr J Sumanth Reddy
             </strong>
-            <span className="text-[10px] text-sky-300 tracking-[2px] uppercase">Eye Specialist</span>
+            <span className="text-[11px] text-accent font-semibold tracking-[2px] uppercase mt-0.5">Eye Specialist</span>
           </div>
         </button>
 
