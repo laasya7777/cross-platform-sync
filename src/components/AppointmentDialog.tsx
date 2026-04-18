@@ -8,6 +8,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { z } from "zod";
 import { Loader2, CheckCircle2 } from "lucide-react";
+import emailjs from "emailjs-com"; // ✅ ADDED
 
 const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -29,6 +30,7 @@ export const AppointmentDialog = ({ open, onOpenChange }: AppointmentDialogProps
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     const fd = new FormData(e.currentTarget);
     const data = {
       name: String(fd.get("name") || ""),
@@ -46,7 +48,9 @@ export const AppointmentDialog = ({ open, onOpenChange }: AppointmentDialogProps
     }
 
     setSubmitting(true);
+
     try {
+      // ✅ 1. Save to Supabase
       const { error } = await supabase.from("appointments").insert({
         name: parsed.data.name,
         phone: parsed.data.phone,
@@ -55,21 +59,52 @@ export const AppointmentDialog = ({ open, onOpenChange }: AppointmentDialogProps
         preferred_time: parsed.data.preferred_time || null,
         reason: parsed.data.reason || null,
       });
-      if (error) throw error;
 
-      // Notify admin (best-effort — does not block success message)
+      if (error) throw error;
+// ✅ 1. Send email to USER
+emailjs.send(
+  "service_4r8aoob",
+  "template_iakrgba",
+  {
+    user_name: parsed.data.name,
+    user_email: parsed.data.email,
+    user_date: parsed.data.preferred_date,
+    user_time: parsed.data.preferred_time,
+  },
+  "ghnYeknN5j1RZ6T74"
+);
+
+// ✅ 2. Send email to ADMIN
+emailjs.send(
+  "service_4r8aoob",
+  "template_itrefca",
+  {
+    user_name: parsed.data.name,
+    user_email: parsed.data.email,
+    user_phone: parsed.data.phone,
+    user_date: parsed.data.preferred_date,
+    user_time: parsed.data.preferred_time,
+    message: parsed.data.reason,
+  },
+  "ghnYeknN5j1RZ6T74"
+
+      ).catch((err) => console.warn("Email failed:", err));
+
+      // ✅ 3. (Optional) Keep your Edge Function
       supabase.functions
         .invoke("notify-admin-appointment", { body: parsed.data })
         .catch((err) => console.warn("Admin notification failed:", err));
 
       setDone(true);
+
       setTimeout(() => {
         onOpenChange(false);
         setDone(false);
       }, 2200);
+
     } catch (err) {
       console.error(err);
-      toast.error("Could not submit. Please try again or call us directly.");
+      toast.error("Could not submit. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -99,38 +134,40 @@ export const AppointmentDialog = ({ open, onOpenChange }: AppointmentDialogProps
               <Label htmlFor="name">Full name *</Label>
               <Input id="name" name="name" required maxLength={100} placeholder="Your name" />
             </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="grid gap-2">
                 <Label htmlFor="phone">Phone *</Label>
                 <Input id="phone" name="phone" type="tel" required maxLength={30} placeholder="+91 ..." />
               </div>
+
               <div className="grid gap-2">
                 <Label htmlFor="email">Email *</Label>
                 <Input id="email" name="email" type="email" required maxLength={255} placeholder="you@email.com" />
               </div>
             </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="grid gap-2">
                 <Label htmlFor="preferred_date">Preferred date</Label>
                 <Input id="preferred_date" name="preferred_date" type="date" />
               </div>
+
               <div className="grid gap-2">
                 <Label htmlFor="preferred_time">Preferred time</Label>
                 <Input id="preferred_time" name="preferred_time" type="time" />
               </div>
             </div>
+
             <div className="grid gap-2">
               <Label htmlFor="reason">Reason / message</Label>
-              <Textarea id="reason" name="reason" maxLength={1000} rows={3} placeholder="Briefly describe your concern" />
+              <Textarea id="reason" name="reason" maxLength={1000} rows={3} />
             </div>
 
-            <Button
-              type="submit"
-              disabled={submitting}
-              className="w-full bg-gradient-to-r from-sky to-accent text-primary-foreground hover:opacity-90 shadow-glow h-11"
-            >
+            <Button type="submit" disabled={submitting} className="w-full h-11">
               {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : "Request Appointment"}
             </Button>
+
             <p className="text-xs text-muted-foreground text-center">
               By submitting, you agree to be contacted regarding this request.
             </p>
