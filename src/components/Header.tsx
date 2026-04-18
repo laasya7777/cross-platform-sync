@@ -59,42 +59,27 @@ export const Header = ({ onBookClick }: HeaderProps) => {
         </button>
 
         <div className="hidden sm:flex items-center gap-2 md:gap-3">
-          <a
-            href="https://www.instagram.com/drjsumanthreddy/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
-          >
-            <Instagram className="h-4 w-4" />
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCivshx63o9MdQiIA9ORzWhQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-            className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
-          >
-            <Youtube className="h-4 w-4" />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
-          >
-            <Facebook className="h-4 w-4" />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
-          >
-            <Twitter className="h-4 w-4" />
-          </a>
+          {[
+            { Icon: Instagram, href: "https://www.instagram.com/drjsumanthreddy/", label: "Instagram" },
+            { Icon: Youtube, href: "https://www.youtube.com/channel/UCivshx63o9MdQiIA9ORzWhQ", label: "YouTube" },
+            { Icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+            { Icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+          ].map(({ Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(href, "_blank", "noopener,noreferrer");
+              }}
+              className="w-9 h-9 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
+            >
+              <Icon className="h-4 w-4" />
+            </a>
+          ))}
           <button
             onClick={onBookClick}
             className="inline-flex items-center gap-2 bg-gradient-to-r from-sky to-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition shadow-glow"

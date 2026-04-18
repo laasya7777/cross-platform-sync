@@ -62,6 +62,10 @@ const Index = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(href, "_blank", "noopener,noreferrer");
+                }}
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-accent/20 border border-white/10 hover:border-accent/50 flex items-center justify-center text-white/70 hover:text-accent transition"
               >
                 <Icon className="h-4 w-4" />
