@@ -8,7 +8,7 @@ import { Contact } from "@/components/Contact";
 import { Banner } from "@/components/Banner";
 import { AppointmentDialog } from "@/components/AppointmentDialog";
 import { Gallery } from "@/components/Gallery";
-import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses, Instagram, Facebook, Youtube, MessageCircle } from "lucide-react";
+import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses, Instagram, Facebook, Youtube, Twitter } from "lucide-react";
 
 const STRIP = [
   { Icon: Eye, label: "Cataract Surgery" },
@@ -51,10 +51,10 @@ const Index = () => {
         <div className="max-w-6xl mx-auto flex flex-col items-center gap-5">
           <div className="flex items-center gap-3">
             {[
-              { Icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+              { Icon: Instagram, href: "https://www.instagram.com/drjsumanthreddy/", label: "Instagram" },
+              { Icon: Youtube, href: "https://www.youtube.com/channel/UCivshx63o9MdQiIA9ORzWhQ", label: "YouTube" },
               { Icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-              { Icon: Youtube, href: "https://youtube.com", label: "YouTube" },
-              { Icon: MessageCircle, href: "https://wa.me/919000000000", label: "WhatsApp" },
+              { Icon: Twitter, href: "https://twitter.com", label: "Twitter" },
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}
