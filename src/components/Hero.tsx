@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import heroClinic from "@/assets/hero-clinic.jpg";
 import heroIris from "@/assets/hero-iris.jpg";
 import heroSurgery from "@/assets/hero-surgery.jpg";
+import heroCornea from "@/assets/hero-cornea.jpg";
+import heroRetina from "@/assets/hero-retina.jpg";
+import heroPaediatric from "@/assets/hero-paediatric.jpg";
 import { Award, ArrowRight, Phone } from "lucide-react";
 
 const SLIDES = [
   { img: heroClinic, label: "Cataract Surgery" },
   { img: heroIris, label: "LASIK / SMILE" },
   { img: heroSurgery, label: "Glaucoma Treatment" },
-  { img: heroClinic, label: "Cornea Transplant" },
-  { img: heroIris, label: "Retina Care" },
-  { img: heroSurgery, label: "Paediatric Eye Care" },
+  { img: heroCornea, label: "Cornea Transplant" },
+  { img: heroRetina, label: "Retina Care" },
+  { img: heroPaediatric, label: "Paediatric Eye Care" },
 ];
 
 interface HeroProps {
