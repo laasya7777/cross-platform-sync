@@ -3,9 +3,9 @@ import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 const CLINIC_ADDRESS =
   "Dr Agarwals Eye Hospital, 19 Air Bypass Rd, near Passport Office, STV Nagar, Tirupati, Andhra Pradesh 517501";
 const MAPS_LINK = "https://maps.app.goo.gl/LXDJRx92t36FM7YS6";
-const MAPS_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(
+const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(
   CLINIC_ADDRESS,
-)}&output=embed`;
+)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
 export const Contact = () => (
   <section id="contact" className="py-20 px-5 sm:px-10 gradient-soft">
@@ -55,11 +55,8 @@ export const Contact = () => (
           </div>
           <h3 className="font-display text-lg text-navy mb-2">Email Us</h3>
           <p className="text-sm text-muted-foreground leading-relaxed break-words">
-            <a href="mailto:contact@drsumanthreddy.com" className="text-sky hover:underline block">
-              contact@drsumanthreddy.com
-            </a>
-            <a href="mailto:appointments@drsumanthreddy.com" className="text-sky hover:underline block">
-              appointments@drsumanthreddy.com
+            <a href="mailto:drsumanthreddy9@gmail.com" className="text-sky hover:underline block text-base font-semibold">
+              drsumanthreddy9@gmail.com
             </a>
           </p>
         </div>
