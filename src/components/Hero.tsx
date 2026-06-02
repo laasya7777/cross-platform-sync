@@ -73,7 +73,7 @@ export const Hero = ({ onBookClick }: HeroProps) => {
               Book Appointment <ArrowRight className="h-4 w-4" />
             </button>
             <a
-              href="tel:+919876543210"
+              href="tel:+919866188256"
               className="inline-flex items-center gap-2 bg-transparent text-white border-2 border-white/30 hover:border-white px-7 py-3 rounded-full text-sm font-semibold transition"
             >
               <Phone className="h-4 w-4" /> Call Now
