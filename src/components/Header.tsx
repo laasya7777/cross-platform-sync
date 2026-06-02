@@ -60,6 +60,9 @@ export const Header = ({ onBookClick }: HeaderProps) => {
     if (el) {
       const y = el.getBoundingClientRect().top + window.scrollY - 90;
       window.scrollTo({ top: y, behavior: "smooth" });
+      if (location.hash !== `#${id}`) {
+        history.replaceState(null, "", `#${id}`);
+      }
     }
   };
 

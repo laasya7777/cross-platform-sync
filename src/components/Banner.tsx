@@ -42,7 +42,7 @@ export const Banner = ({ onBookClick }: BannerProps) => (
           <Mail className="h-5 w-5" /> Book Appointment
         </button>
         <a
-          href="tel:+919876543210"
+          href="tel:+919866188256"
           className="inline-flex items-center gap-2 bg-transparent text-white border-2 border-white/40 hover:border-white px-8 py-3.5 rounded-full text-sm font-medium transition"
         >
           <Phone className="h-4 w-4" /> Get Assistance Now
