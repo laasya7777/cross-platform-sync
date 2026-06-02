@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Instagram, Youtube, Facebook, Twitter } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 
@@ -7,6 +8,7 @@ const NAV = [
   { id: "about", label: "About" },
   { id: "services", label: "Services" },
   { id: "gallery", label: "Gallery" },
+  { id: "blog", label: "Blog", route: "/blog" as const },
   { id: "testimonials", label: "Testimonials" },
   { id: "contact", label: "Contact" },
 ];
@@ -18,12 +20,20 @@ interface HeaderProps {
 export const Header = ({ onBookClick }: HeaderProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("hero");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const onHome = location.pathname === "/";
 
   useEffect(() => {
+    if (!onHome) {
+      setActive(location.pathname.startsWith("/blog") ? "blog" : "");
+      return;
+    }
     const onScroll = () => {
       const fromTop = window.scrollY + 140;
       let current = "hero";
       for (const item of NAV) {
+        if ((item as { route?: string }).route) continue;
         const el = document.getElementById(item.id);
         if (el && el.offsetTop <= fromTop) current = item.id;
       }
@@ -32,10 +42,20 @@ export const Header = ({ onBookClick }: HeaderProps) => {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [onHome, location.pathname]);
 
-  const go = (id: string) => {
+  const go = (item: { id: string; route?: string }) => {
     setMobileOpen(false);
+    if (item.route) {
+      navigate(item.route);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (!onHome) {
+      navigate(`/#${item.id}`);
+      return;
+    }
+    const id = item.id;
     const el = document.getElementById(id);
     if (el) {
       const y = el.getBoundingClientRect().top + window.scrollY - 90;
@@ -43,10 +63,21 @@ export const Header = ({ onBookClick }: HeaderProps) => {
     }
   };
 
+  useEffect(() => {
+    if (onHome && location.hash) {
+      const id = location.hash.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+  }, [onHome, location.hash]);
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-navy/95 backdrop-blur-lg shadow-lg">
       <div className="flex items-center justify-between px-4 sm:px-8 h-[62px] border-b border-white/10">
-        <button onClick={() => go("hero")} className="flex items-center gap-3">
+        <button onClick={() => go({ id: "hero" })} className="flex items-center gap-3">
           <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-white border-2 border-accent/60 shadow-glow shrink-0">
             <img src={logo} alt="Dr J Sumanth Reddy logo" className="w-full h-full object-cover" />
           </div>
@@ -102,7 +133,7 @@ export const Header = ({ onBookClick }: HeaderProps) => {
         {NAV.map((n) => (
           <button
             key={n.id}
-            onClick={() => go(n.id)}
+            onClick={() => go(n)}
             className={`text-xs uppercase tracking-wider font-medium px-4 py-1.5 rounded-md transition ${
               active === n.id
                 ? "text-white bg-accent/20"
@@ -120,7 +151,7 @@ export const Header = ({ onBookClick }: HeaderProps) => {
           {NAV.map((n) => (
             <button
               key={n.id}
-              onClick={() => go(n.id)}
+              onClick={() => go(n)}
               className={`text-left px-4 py-3 rounded-md text-sm uppercase tracking-wider font-medium transition ${
                 active === n.id ? "text-white bg-accent/20" : "text-white/80 hover:bg-white/10"
               }`}
