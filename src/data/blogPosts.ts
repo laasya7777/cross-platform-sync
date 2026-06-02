@@ -347,6 +347,385 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "cataract",
+    title: "Cataract: When the Eye's Lens Turns Cloudy",
+    excerpt:
+      "Cataracts gradually cloud the natural lens of the eye, blurring vision. Learn the causes, types and the safe, modern surgery that can restore clear sight.",
+    category: "Lens",
+    readTime: "5 min read",
+    date: "Jun 2, 2026",
+    icon: "☁️",
+    gradient: "from-slate-500 via-slate-600 to-zinc-700",
+    sections: [
+      {
+        heading: "Introduction",
+        paragraphs: [
+          "A cataract is a common eye condition in which the natural lens of the eye becomes cloudy, leading to blurred vision. The lens, located behind the iris and pupil, is normally transparent so light can focus on the retina. As a cataract develops, the lens loses clarity.",
+          "Cataracts are one of the leading causes of blindness worldwide, especially in older adults. With modern surgery, vision can usually be restored completely.",
+        ],
+      },
+      {
+        heading: "Major Causes",
+        list: [
+          "Aging (most common)",
+          "Diabetes mellitus",
+          "Excessive UV exposure",
+          "Smoking",
+          "Eye injuries",
+          "Long-term steroid medication",
+          "Genetic predisposition",
+        ],
+      },
+      {
+        heading: "Types of Cataract",
+        paragraphs: [
+          "Nuclear cataract — forms in the centre of the lens, common with aging, causes yellowing.",
+          "Cortical cataract — develops at the outer edges; appears as white streaks causing glare.",
+          "Posterior subcapsular cataract — at the back of the lens, progresses rapidly; common in diabetics and steroid users.",
+        ],
+      },
+      {
+        heading: "Symptoms",
+        list: [
+          "Blurred or cloudy vision",
+          "Sensitivity to bright light",
+          "Glare and halos around lights",
+          "Poor night vision",
+          "Faded or yellow-tinted colours",
+          "Frequent changes in glasses prescription",
+        ],
+      },
+      {
+        heading: "Cataract Surgery",
+        paragraphs: [
+          "Surgery is the only permanent treatment. The cloudy natural lens is removed and replaced with an artificial intraocular lens (IOL). It is one of the safest and most successful medical procedures performed today.",
+        ],
+      },
+      {
+        callout: {
+          title: "Delay cataracts — healthy habits",
+          items: [
+            "Wear UV-protective sunglasses",
+            "Control diabetes effectively",
+            "Avoid smoking & excessive alcohol",
+            "Eat antioxidant-rich foods",
+            "Get regular eye examinations",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "refractive-errors",
+    title: "Refractive Errors: Why Vision Becomes Blurred",
+    excerpt:
+      "Myopia, hyperopia, astigmatism and presbyopia all share one cause — light isn't focusing right on the retina. Here's how each works and how it's corrected.",
+    category: "Vision",
+    readTime: "6 min read",
+    date: "Jun 2, 2026",
+    icon: "👓",
+    gradient: "from-blue-500 via-indigo-500 to-purple-500",
+    sections: [
+      {
+        heading: "Introduction",
+        paragraphs: [
+          "Refractive errors are among the most common eye disorders. They occur when the shape of the eye prevents light from focusing correctly on the retina, leading to blurred vision. They affect all ages and can interfere with reading, driving, study and daily life.",
+        ],
+      },
+      {
+        heading: "Myopia (Nearsightedness)",
+        paragraphs: [
+          "Distant objects appear blurry, while nearby objects remain clear. The eyeball is too long or the cornea too curved, so light focuses in front of the retina.",
+          "Symptoms: difficulty seeing distance, squinting, headaches, eye strain. Corrected with concave (minus power) lenses, contact lenses or LASIK.",
+        ],
+      },
+      {
+        heading: "Hyperopia (Farsightedness)",
+        paragraphs: [
+          "Nearby objects appear blurry. The eyeball is shorter than normal or the cornea too flat, so light focuses behind the retina.",
+          "Symptoms: difficulty reading, eye fatigue, headaches after close work. Corrected with convex (plus power) lenses, contacts or refractive surgery.",
+        ],
+      },
+      {
+        heading: "Astigmatism",
+        paragraphs: [
+          "The cornea has an irregular, football-like shape causing distorted or blurred vision at all distances. Corrected with cylindrical lenses, toric contact lenses or laser surgery.",
+        ],
+      },
+      {
+        heading: "Presbyopia (Age-Related)",
+        paragraphs: [
+          "After age 40, the lens loses flexibility and struggles to focus on near objects. Corrected with reading glasses, bifocals, progressive or multifocal lenses.",
+        ],
+      },
+      {
+        callout: {
+          title: "Healthy vision habits",
+          items: [
+            "Follow the 20-20-20 rule",
+            "Maintain proper reading distance (33–40 cm)",
+            "Ensure good lighting",
+            "Limit unnecessary screen time",
+            "Get regular eye check-ups",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "retinal-detachment",
+    title: "Retinal Detachment: An Eye Emergency You Shouldn't Ignore",
+    excerpt:
+      "Flashes, sudden floaters or a dark curtain across vision can mean the retina has detached. Acting within hours can save your sight.",
+    category: "Retina",
+    readTime: "8 min read",
+    date: "Jun 2, 2026",
+    icon: "⚡",
+    gradient: "from-red-600 via-rose-600 to-orange-600",
+    sections: [
+      {
+        heading: "Introduction",
+        paragraphs: [
+          "Retinal Detachment is a serious ophthalmic emergency in which the retina separates from the underlying supportive tissues at the back of the eye. Without prompt treatment, retinal cells lose their blood and oxygen supply, leading to permanent vision loss.",
+          "It affects about 1 in 10,000 people each year and demands immediate ophthalmologic care.",
+        ],
+      },
+      {
+        heading: "Types of Retinal Detachment",
+        paragraphs: [
+          "1. Rhegmatogenous — most common; a tear lets vitreous fluid seep under and lift the retina. Causes: aging, high myopia, eye trauma, previous surgery.",
+          "2. Tractional — scar tissue pulls the retina away. Often linked to diabetic retinopathy or eye inflammation.",
+          "3. Exudative — fluid collects under the retina without a tear. Caused by inflammation, tumours, severe hypertension.",
+        ],
+      },
+      {
+        heading: "Warning Signs",
+        list: [
+          "Sudden increase in floaters",
+          "Brief flashes of light, especially in side vision",
+          "A dark shadow or 'curtain' spreading across vision",
+          "Blurred or distorted vision",
+          "Sudden loss of vision",
+        ],
+      },
+      {
+        heading: "Treatment",
+        paragraphs: [
+          "Laser photocoagulation seals small retinal tears. Cryopexy uses freezing to scar the area around a tear. Pneumatic retinopexy injects a gas bubble to push the retina back. Scleral buckling places a silicone band around the eye. Vitrectomy removes the vitreous gel and repairs the tear from within.",
+        ],
+      },
+      {
+        callout: {
+          title: "Seek emergency care if you notice",
+          items: [
+            "Sudden flashes or floaters",
+            "A shadow or curtain over vision",
+            "Sudden vision loss",
+            "Severe distortion",
+            "Recent eye trauma + visual changes",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "age-related-macular-degeneration",
+    title: "Age-Related Macular Degeneration (AMD): Protecting Central Vision",
+    excerpt:
+      "AMD damages the macula — the spot responsible for sharp central vision. Early detection and lifestyle changes can preserve your independence.",
+    category: "Retina",
+    readTime: "7 min read",
+    date: "Jun 2, 2026",
+    icon: "🎯",
+    gradient: "from-yellow-500 via-amber-500 to-orange-600",
+    sections: [
+      {
+        heading: "Introduction",
+        paragraphs: [
+          "Age-Related Macular Degeneration (AMD) affects the macula — the central portion of the retina responsible for sharp, detailed vision. It is one of the leading causes of vision loss in people over 50.",
+          "AMD makes activities like reading, driving and recognising faces difficult. Peripheral vision usually remains, but central vision progressively deteriorates.",
+        ],
+      },
+      {
+        heading: "Dry AMD",
+        paragraphs: [
+          "The most common form. The macula thins and yellow deposits called drusen accumulate. Vision blurs gradually and reading requires brighter light.",
+        ],
+      },
+      {
+        heading: "Wet AMD",
+        paragraphs: [
+          "Less common but more severe. Abnormal blood vessels grow beneath the retina and leak blood or fluid, causing rapid vision loss, distortion and dark spots in central vision.",
+        ],
+      },
+      {
+        heading: "Risk Factors",
+        list: [
+          "Age above 50",
+          "Smoking",
+          "Family history",
+          "High blood pressure & obesity",
+          "Excessive UV exposure",
+          "Poor diet",
+        ],
+      },
+      {
+        heading: "Treatment",
+        paragraphs: [
+          "Lifestyle and antioxidant nutrition can slow Dry AMD. Anti-VEGF injections stop abnormal vessel growth in Wet AMD. Laser therapy is used in selected cases.",
+        ],
+      },
+      {
+        callout: {
+          title: "Slow AMD progression",
+          items: [
+            "Stop smoking",
+            "Eat leafy greens & omega-3",
+            "Protect eyes from UV light",
+            "Control blood pressure",
+            "Exercise regularly",
+            "Annual eye exams",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "color-blindness",
+    title: "Color Blindness: How People See the World Differently",
+    excerpt:
+      "Most color-blind people don't see in black and white — they confuse specific colors. Learn the types, the Ishihara test and modern color-correcting tools.",
+    category: "Vision",
+    readTime: "6 min read",
+    date: "Jun 2, 2026",
+    icon: "🌈",
+    gradient: "from-pink-500 via-purple-500 to-indigo-500",
+    sections: [
+      {
+        heading: "Introduction",
+        paragraphs: [
+          "Color Blindness, or Color Vision Deficiency, is a condition where a person has difficulty distinguishing certain colors. Contrary to popular belief, most affected people do not see only black and white — they struggle with specific combinations, most commonly red and green.",
+          "Color vision relies on cone cells in the retina. When one or more types of cones are defective, color perception is impaired. It is usually inherited but can also develop later in life.",
+        ],
+      },
+      {
+        heading: "Types",
+        paragraphs: [
+          "Red-Green — most common; red and green appear similar or brownish.",
+          "Blue-Yellow — less common; difficulty distinguishing blue from yellow shades.",
+          "Complete (Achromatopsia) — rare; no color perception, with light sensitivity and reduced visual acuity.",
+        ],
+      },
+      {
+        heading: "Common Causes",
+        list: [
+          "Inherited gene mutations (most common)",
+          "Glaucoma, diabetic retinopathy, macular degeneration",
+          "Optic nerve diseases",
+          "Eye injuries",
+          "Certain medications",
+          "Aging",
+        ],
+      },
+      {
+        heading: "Diagnosis",
+        paragraphs: [
+          "The Ishihara color plate test is the most widely used screening. Other tests include the Anomaloscope and Farnsworth D-15.",
+        ],
+      },
+      {
+        heading: "Management",
+        paragraphs: [
+          "Inherited color blindness has no cure, but color-correcting glasses with special filters enhance contrast, and smartphone apps can identify colors. Most people adapt successfully and lead normal lives.",
+        ],
+      },
+      {
+        callout: {
+          title: "Reduce acquired color blindness risk",
+          items: [
+            "Manage diabetes",
+            "Regular eye examinations",
+            "Protect eyes from injury",
+            "Treat underlying eye diseases promptly",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "common-eye-problems",
+    title: "Common Eye Problems: An Overview Everyone Should Know",
+    excerpt:
+      "A quick guide to the most common eye conditions — refractive errors, cataract, glaucoma, dry eye, conjunctivitis, diabetic retinopathy and digital eye strain.",
+    category: "Overview",
+    readTime: "5 min read",
+    date: "Jun 2, 2026",
+    icon: "👁️‍🗨️",
+    gradient: "from-teal-500 via-cyan-500 to-sky-600",
+    sections: [
+      {
+        heading: "Why Eye Health Matters",
+        paragraphs: [
+          "Vision is central to everyday life. According to the WHO, millions of people worldwide live with preventable or treatable visual impairment. Many eye conditions are silent in early stages — early detection makes all the difference.",
+        ],
+      },
+      {
+        heading: "Refractive Errors",
+        paragraphs: [
+          "Light doesn't focus correctly on the retina. Myopia, hyperopia and astigmatism cause blurred vision, headaches and eye strain. Corrected with glasses, contact lenses or LASIK.",
+        ],
+      },
+      {
+        heading: "Cataract",
+        paragraphs: [
+          "The natural lens clouds, causing painless gradual vision loss, glare and reduced night vision. Treated with surgical removal and intraocular lens implantation.",
+        ],
+      },
+      {
+        heading: "Glaucoma",
+        paragraphs: [
+          "A group of optic nerve diseases linked to raised eye pressure. Causes silent peripheral vision loss. Treated with eye drops, laser or surgery.",
+        ],
+      },
+      {
+        heading: "Dry Eye Disease",
+        paragraphs: [
+          "Burning, gritty sensation and visual blur. Caused by reduced tear production or rapid evaporation. Managed with artificial tears, lifestyle changes and treating underlying causes.",
+        ],
+      },
+      {
+        heading: "Conjunctivitis",
+        paragraphs: [
+          "Inflammation of the conjunctiva — viral, bacterial or allergic. Causes redness, discharge and itching. Treated based on cause.",
+        ],
+      },
+      {
+        heading: "Diabetic Retinopathy",
+        paragraphs: [
+          "A microvascular complication of diabetes affecting retinal vessels. Managed with glycemic control, laser photocoagulation and intravitreal injections.",
+        ],
+      },
+      {
+        heading: "Digital Eye Strain",
+        paragraphs: [
+          "Common with prolonged device use — fatigue, dryness, headaches. The 20-20-20 rule and ergonomic adjustments help.",
+        ],
+      },
+      {
+        callout: {
+          title: "Preventive strategies for everyone",
+          items: [
+            "Regular eye examinations",
+            "Balanced nutrition rich in antioxidants & Vitamin A",
+            "Protective UV eyewear",
+            "Limit screen time & ensure good ergonomics",
+            "Manage systemic conditions like diabetes",
+          ],
+        },
+      },
+    ],
+  },
 ];
 
 export const getPostBySlug = (slug: string) =>
