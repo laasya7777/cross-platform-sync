@@ -1,18 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { AppointmentDialog } from "@/components/AppointmentDialog";
-import { getPostBySlug, blogPosts } from "@/data/blogPosts";
-import { ArrowLeft, Clock, Calendar, AlertCircle } from "lucide-react";
+import { fetchAllPosts, type UnifiedBlogPost } from "@/lib/blog";
+import { ArrowLeft, Clock, Calendar, AlertCircle, Loader2 } from "lucide-react";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const [open, setOpen] = useState(false);
-  const post = slug ? getPostBySlug(slug) : undefined;
+  const [allPosts, setAllPosts] = useState<UnifiedBlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    fetchAllPosts()
+      .then(setAllPosts)
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-accent" />
+      </div>
+    );
+  }
+
+  const post = allPosts.find((p) => p.slug === slug);
   if (!post) return <Navigate to="/blog" replace />;
-
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
     <main className="min-h-screen bg-background">
@@ -22,6 +37,11 @@ const BlogPost = () => {
       <section
         className={`pt-32 pb-16 px-5 sm:px-10 bg-gradient-to-br ${post.gradient} text-white relative overflow-hidden`}
       >
+        {post.coverImageUrl && (
+          <div className="absolute inset-0 opacity-30">
+            <img src={post.coverImageUrl} alt="" className="w-full h-full object-cover" />
+          </div>
+        )}
         <div className="max-w-3xl mx-auto relative">
           <Link
             to="/blog"
