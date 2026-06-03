@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { AppointmentDialog } from "@/components/AppointmentDialog";
-import { blogPosts } from "@/data/blogPosts";
-import { ArrowRight, Clock, Calendar } from "lucide-react";
+import { fetchAllPosts, type UnifiedBlogPost } from "@/lib/blog";
+import { ArrowRight, Clock, Calendar, Loader2 } from "lucide-react";
 
 const Blog = () => {
   const [open, setOpen] = useState(false);
+  const [posts, setPosts] = useState<UnifiedBlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchAllPosts()
+      .then(setPosts)
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <main className="min-h-screen bg-background">
       <Header onBookClick={() => setOpen(true)} />
@@ -29,8 +38,13 @@ const Blog = () => {
 
       {/* Posts grid */}
       <section className="py-14 px-5 sm:px-10">
+        {loading ? (
+          <div className="flex justify-center py-20">
+            <Loader2 className="h-8 w-8 animate-spin text-accent" />
+          </div>
+        ) : (
         <div className="max-w-6xl mx-auto grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((post) => (
+          {posts.map((post) => (
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}
@@ -39,7 +53,15 @@ const Blog = () => {
               <div
                 className={`h-44 bg-gradient-to-br ${post.gradient} flex items-center justify-center text-7xl relative overflow-hidden`}
               >
-                <span className="drop-shadow-lg">{post.icon}</span>
+                {post.coverImageUrl ? (
+                  <img
+                    src={post.coverImageUrl}
+                    alt={post.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="drop-shadow-lg">{post.icon}</span>
+                )}
                 <span className="absolute top-3 left-3 text-[10px] uppercase tracking-widest bg-white/20 backdrop-blur text-white px-2.5 py-1 rounded-full font-semibold">
                   {post.category}
                 </span>
@@ -62,6 +84,7 @@ const Blog = () => {
             </Link>
           ))}
         </div>
+        )}
       </section>
 
       <footer className="bg-navy-deep px-5 sm:px-10 py-8 text-center text-white/50 text-sm">
