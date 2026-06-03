@@ -1,5 +1,5 @@
-import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses } from "lucide-react";
-
+// import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses } from "lucide-react";
+import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses, Stethoscope, ScanEye } from "lucide-react";  
 const SERVICES = [
   { icon: Eye, title: "Cataract Surgery", desc: "Bladeless phacoemulsification with premium IOL options for crystal-clear vision." },
   { icon: Microscope, title: "LASIK / SMILE", desc: "Wavefront-guided laser vision correction for freedom from glasses." },
@@ -8,6 +8,17 @@ const SERVICES = [
   { icon: Globe, title: "Cornea Transplant", desc: "DSEK, DMEK and full-thickness corneal grafting." },
   { icon: Baby, title: "Paediatric Eye", desc: "Gentle, child-friendly examination and squint correction." },
   { icon: Glasses, title: "Squint Correction", desc: "Cosmetic and functional alignment for adults and children." },
+  {
+  icon: Stethoscope,
+  title: "General Eye Checkup",
+  desc: "Comprehensive vision testing and preventive eye health screening for all ages."
+},
+
+{
+  icon: ScanEye,
+  title: "Diabetic Eye Care",
+  desc: "Advanced diabetic retinopathy screening and laser treatment to protect vision."
+},
 ];
 
 export const Services = () => (

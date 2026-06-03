@@ -8,7 +8,7 @@ import { Contact } from "@/components/Contact";
 import { Banner } from "@/components/Banner";
 import { AppointmentDialog } from "@/components/AppointmentDialog";
 import { Gallery } from "@/components/Gallery";
-import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses, Instagram, Facebook, Youtube, Twitter } from "lucide-react";
+import { Eye, Microscope, Droplet, Activity, Globe, Baby, Glasses, Instagram, Facebook, Youtube, X,Linkedin } from "lucide-react";
 
 const STRIP = [
   { Icon: Eye, label: "Cataract Surgery" },
@@ -53,8 +53,23 @@ const Index = () => {
             {[
               { Icon: Instagram, href: "https://www.instagram.com/drjsumanthreddy/", label: "Instagram" },
               { Icon: Youtube, href: "https://www.youtube.com/channel/UCivshx63o9MdQiIA9ORzWhQ", label: "YouTube" },
-              { Icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-              { Icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+              {
+  Icon: Facebook,
+  href: "https://www.facebook.com/profile.php?id=61589439452928",
+  label: "Facebook",
+},
+
+{
+  Icon: X,
+  href: "https://x.com/DrJSumanthReddy",
+  label: "X",
+},
+
+{
+  Icon: Linkedin,
+  href: "https://www.linkedin.com/in/drjsumanthreddy/",
+  label: "LinkedIn",
+},
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}
@@ -74,7 +89,7 @@ const Index = () => {
           </div>
           <div className="space-y-1">
             <p>
-              © 2024 <strong className="text-white/80">Dr J Sumanth Reddy</strong> – Eye Specialist
+              © 2026 <strong className="text-white/80">Dr J Sumanth Reddy</strong> – Eye Specialist
               &amp; Surgeon. All rights reserved.
             </p>
             <p className="text-white/40">Hyderabad, Telangana | Designed with ❤ for better vision</p>
